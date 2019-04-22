@@ -5,7 +5,7 @@ class Menu extends GameScene {
      */
     constructor() {
         super();
-       
+
         this.FPS=30;
         this.components=[];
         this.initMenu();
@@ -17,16 +17,20 @@ class Menu extends GameScene {
      * @memberof Menu
      */
     initMenu() {
-        
+
         var NewGameButton= Button.getButton(RESOURCES.buttons[0]);
         var ContinueButton= Button.getButton(RESOURCES.buttons[1]);
         var OptionsButton=Button.getButton(RESOURCES.buttons[2]);
+        var ResumeGameButton = Button.getButton(RESOURCES.button[3]);
+
         NewGameButton.event_controller=new EventController(new NewSenceEvents(new SelectChapterMenu()),new Event());
         this.components.push(NewGameButton);
         this.components.push(ContinueButton);
         this.components.push(OptionsButton);
+
+        this.components.push(ResumeGameButton);
         this.components.push(new MenuAnimation());
-       
+
     }
 
 }
